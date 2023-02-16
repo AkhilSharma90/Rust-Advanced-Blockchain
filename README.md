@@ -1,4 +1,4 @@
-## Blockchain in Rust
+## Advanced Blockchain in Rust
 
 This is an advanced blockchain in Rust.
 It has all the major concepts like consensus, transactions, nodes, wallets but actually implemented in code. 

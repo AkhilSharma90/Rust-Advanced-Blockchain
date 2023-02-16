@@ -109,16 +109,16 @@ fn main() {
             }
             let blockchain = Blockchain::new_blockchain();
             let utxo_set = UTXOSet::new(blockchain.clone());
-            // 创建 UTXO 交易
+        
             let transaction =
                 Transaction::new_utxo_transaction(from.as_str(), to.as_str(), amount, &utxo_set);
 
             if mine == MINE_TRUE {
-                // 挖矿奖励
+   
                 let coinbase_tx = Transaction::new_coinbase_tx(from.as_str());
-                // 挖新区块
+         
                 let block = blockchain.mine_block(&vec![transaction, coinbase_tx]);
-                // 更新 UTXO 集
+      
                 utxo_set.update(&block);
             } else {
                 send_tx(CENTERAL_NODE, &transaction);

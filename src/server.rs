@@ -48,7 +48,6 @@ impl Server {
     pub fn run(&self, addr: &str) {
         let listener = TcpListener::bind(addr).unwrap();
 
-        // 发送 version 握手
         if addr.eq(CENTERAL_NODE) == false {
             let best_height = self.blockchain.get_best_height();
             info!("send sersion best_height: {}", best_height);
